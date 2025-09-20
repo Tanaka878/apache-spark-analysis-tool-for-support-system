@@ -35,6 +35,7 @@ public class SparkConfig {
                 .config("spark.mongodb.read.connection.uri", mongoUri)
                 .config("spark.mongodb.write.connection.uri", mongoUri)
                 .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+                .config("spark.ui.enabled", "false")  // 🚀 Disable UI
                 .getOrCreate();
     }
 
@@ -47,6 +48,7 @@ public class SparkConfig {
                 .config("spark.driver.memory", driverMemory)
                 .config("spark.sql.streaming.checkpointLocation", "/tmp/spark-checkpoint")
                 .config("spark.mongodb.read.connection.uri", mongoUri)
+                .config("spark.ui.enabled", "false")  // 🚀 Disable UI
                 .config("spark.mongodb.write.connection.uri", mongoUri)
                 .getOrCreate();
     }
